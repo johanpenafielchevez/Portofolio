@@ -1,0 +1,629 @@
+/* Variables */
+:root{
+    --couleur-secondaire:#EACDCF;
+    --couleur-primaire: #ffecdc;
+    --couleur-accent: #D9899A;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+}
+.ensemble{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 34px 18px var(--couleur-secondaire);
+}
+/* Barre Navigation */
+header{
+    height: 100px;
+    background-color: var(--couleur-primaire);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 20px -6px rgba(217, 137, 154, 0.884);
+}
+nav{
+    height: 100%;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 18pt;
+}
+nav a{
+    text-decoration: none;
+}
+nav a.bouton{
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.418);
+}
+#logo{
+    position: absolute;
+    top: -135px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    clip-path: circle(20% at 45% 40%);
+}
+/* Partie Information */
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 140px 120px;
+}
+.description{
+    flex: 1;
+    max-width: 650px;
+    text-align: center;
+    padding: 0.2rem;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+.description p{
+    margin-bottom: 10px;
+    font-size: 14pt;
+}
+.description h1{
+    color: var(--couleur-accent);
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 92pt;
+    line-height: 1.2;
+}
+.container-main{
+    background-color: var(--couleur-secondaire);
+    padding-bottom: 140px;
+}
+.photo-principale{
+    width: 600px;
+    height: 650px;
+    object-fit: cover;
+    border-top-left-radius: 90%;
+    border-top-right-radius: 40%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 90%;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.35);
+    margin-top: 20px;
+    object-position: center 60%;
+}
+/* BOUTON ADOPTE */
+a.bouton-adopte{
+    display: inline-block;
+    padding: 16px 45px;
+    margin-top: 25px;
+    font-size: 18pt;
+    font-weight: 600;
+    min-width: 220px;
+    text-align: center;
+    border: 2px solid var(--couleur-accent);
+    border-radius: 50px;
+    color: black;
+    text-decoration: none;
+    background-color: var(--couleur-accent);
+    transition: background-color 0.4s ease;
+}
+a.bouton-adopte:hover{
+    background-color: transparent;
+}
+/* Succes stories */
+.succes-stories{
+    background-color: white;
+    border-top-left-radius: 50% 120px;
+    border-top-right-radius: 50% 120px;
+    padding: 150px 40px 200px;
+    margin-top: -140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 -8px 20px -6px rgba(217, 137, 154, 0.897);
+}
+.succes-stories h2{
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 60pt;
+    color: var(--couleur-accent);
+    margin-bottom: 100px;
+}
+/* Histoire Principale */
+.histoire-contenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    width: 100%;
+}
+/* Animation photo (zoom dentro de su limite) */
+.zoom-photo{
+    width: 600px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 40% 70% 35% 50%;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.35);
+}
+.photo-histoire-principale{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in;
+}
+.zoom-photo:hover .photo-histoire-principale{
+    transform: scale(1.1);
+}
+/* Textos succes stories */
+.succes-stories h3{
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 30pt;
+    margin-bottom: 50px;
+}
+.succes-stories p{
+    margin-bottom: 20px;
+    font-size: 14pt;
+}
+/* Cartes Histoires */
+.carrousel{
+    width: 80%;
+    margin: 200px auto 0;
+}
+.liste-histoire{
+    display: flex;
+    gap: 2rem;
+    padding: 20px 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    anchor-name: --carrousel;
+    scrollbar-width: none;
+}
+.liste-histoire::-webkit-scrollbar{
+    display: none;
+}
+/* Fleches aux cotes */
+.liste-histoire::scroll-button(right),
+.liste-histoire::scroll-button(left){
+    content: "❯";
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--couleur-accent);
+    background-color: var(--couleur-accent);
+    color: black;
+    font-size: 18pt;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+
+    position: fixed;
+    position-anchor: --carrousel;
+    position-area: right center;
+    margin-inline: 1rem;
+}
+
+.liste-histoire::scroll-button(left){
+    content: "❮";
+    position-area: left center;
+}
+
+.liste-histoire::scroll-button(right):hover,
+.liste-histoire::scroll-button(left):hover{
+    background-color: transparent;
+}
+
+.liste-histoire::scroll-button(right):disabled,
+.liste-histoire::scroll-button(left):disabled{
+    opacity: 0.4;
+    cursor: auto;
+}
+.carte-histoire{
+    position: relative;
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    background-color: var(--couleur-primaire);
+    box-shadow: 0px 0px 10px 2px var(--couleur-secondaire);
+    flex: 0 0 calc((100% - 4rem) / 3);
+    scroll-snap-align: start;
+}
+.carte-histoire h4{
+    text-align: center;
+    margin: 0.6rem 0;
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+}
+.carte-histoire img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center 70%;
+    border-radius: 1.5rem;
+    display: block;
+}
+.carte-histoire .photo-tara{
+    object-position: center 40%;
+}
+.carte-histoire .photo-pilou{
+    object-position: center 25%;
+}
+.carte-histoire .photo-padme{
+    object-position: center 45%;
+}
+/* Boton En savoir plus */
+.details-histoires summary{
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--couleur-accent);
+    border: 2px solid var(--couleur-accent);
+    border-radius: 1rem;
+    font-weight: 700;
+    transition: background-color 0.4s ease;
+}
+.details-histoires summary:hover{
+    background-color: transparent;
+}
+.details-histoires summary::-webkit-details-marker{
+    display: none;
+}
+.details-histoires .fermer{
+    display: none;
+}
+.details-histoires[open] .ouvrir{
+    display: none;
+}
+.details-histoires[open] .fermer{
+    display: inline;
+}
+.carte-histoire:has(.details-histoires[open]) summary{
+    background-color: var(--couleur-secondaire);
+    padding: 0.2rem;
+}
+/* Carte ouverte (ventana central) */
+@media (min-width: 796px){
+    .carte-histoire:has(.details-histoires[open]){
+        position: fixed;
+        width: 75%;
+        max-width: 1100px;
+        max-height: 90vh;
+        padding: 2rem;
+        overflow-y: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        gap: 1.5rem 1rem;
+        align-items: start;
+    }
+    .carte-histoire:has(.details-histoires[open]) img{
+        grid-column: 1;
+        grid-row: 2 / 4;
+        height: 320px;
+    }
+    .carte-histoire:has(.details-histoires[open]) .details-histoires{
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .carte-histoire:has(.details-histoires[open]) summary{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 0.3rem;
+        background: transparent;
+    }
+}
+/* Pie de page */
+footer{
+    display: grid;
+    background-color: var(--couleur-primaire);
+    height: 200px;
+    grid-template-columns: 150px 1fr auto;
+    column-gap: 40px;
+    padding: 30px 80px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -8px 20px -6px rgba(217, 137, 154, 0.849);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: start;
+    font-family: sans-serif;
+}
+.footer-img-box{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.footer-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 375px;
+    height: auto;
+    transform: translate(-45%, -40%);
+    clip-path: circle(20% at 45% 40%);
+}
+footer h5{
+    font-size: 18pt;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 30px;
+}
+footer p{
+    line-height: 2;
+    max-width: 450px;
+}
+footer > div:last-child{
+    margin-right: 150px;
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* ----------  1024px : sans bordures blancs ---------- */
+@media (max-width: 126ii4px){
+    .ensemble{
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    header{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    nav ul{
+        font-size: 15pt;
+    }
+
+    /* style meme */
+    main{
+        padding: 140px 40px;
+        gap: 30px;
+    }
+    .description h1{
+        font-size: clamp(40pt, 7vw, 70pt);
+    }
+    .description p{
+        font-size: 13pt;
+    }
+    .photo-principale{
+        width: 45%;
+        height: 560px;
+    }
+
+    /* Style meme */
+    .succes-stories{
+        padding: 150px 30px 160px;
+    }
+    .succes-stories h2{
+        font-size: clamp(30pt, 6vw, 48pt);
+        margin-bottom: 80px;
+    }
+    .histoire-contenu{
+        gap: 30px;
+    }
+    .zoom-photo{
+        width: 45%;
+        flex-shrink: 0;
+        height: 420px;
+    }
+    .succes-stories h3{
+        font-size: clamp(16pt, 2.6vw, 24pt);
+        margin-bottom: 30px;
+    }
+    .succes-stories p{
+        font-size: 13pt;
+    }
+
+    /* Carrousel */
+    .carrousel{
+        width: 82%;
+        margin-top: 150px;
+    }
+    .carte-histoire img{
+        height: 180px;
+    }
+    .liste-histoire::scroll-button(right),
+    .liste-histoire::scroll-button(left){
+        width: 50px;
+        height: 50px;
+        font-size: 14pt;
+        margin-inline: 0.6rem;
+    }
+
+    /* Footer */
+    footer{
+        padding: 30px 40px;
+        column-gap: 24px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    footer > div:last-child{
+        margin-right: 40px;
+    }
+}
+
+/* ----------  768px  ---------- */
+@media (max-width: 768px){
+
+    /* Header: logo rentre dedans la barre */
+    header{
+        height: 80px;
+    }
+    nav ul{
+        font-size: 12pt;
+        padding: 0 10px;
+    }
+    #logo{
+        width: 200px;   
+        top: -40px;     
+    }
+
+    /* Tite → description-*/
+    .container-main{
+        padding-bottom: 90px;
+    }
+    main{
+        flex-direction: column;
+        padding: 50px 20px 0;
+        gap: 30px;
+    }
+    .description{
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .description h1{
+        font-size: clamp(30pt, 10vw, 46pt);
+    }
+    .description p{
+        font-size: 12pt;
+    }
+    a.bouton-adopte{
+        font-size: 14pt;
+        padding: 12px 36px;
+        min-width: 180px;
+    }
+    .photo-principale{
+        width: 100%;
+        max-width: 420px;
+        height: 380px;
+        margin-top: 0;
+    }
+
+    /* Histoires qui inspirent → foto → titr text → carruosel */
+    .succes-stories{
+        border-top-left-radius: 50% 60px;
+        border-top-right-radius: 50% 60px;
+        margin-top: -60px;
+        padding: 100px 16px 100px;
+    }
+    .succes-stories h2{
+        font-size: clamp(24pt, 8vw, 36pt);
+        margin-bottom: 40px;
+    }
+    .histoire-contenu{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .histoire-contenu > div:last-child{
+        width: 100%;
+    }
+    .zoom-photo{
+        width: 100%;
+        max-width: 420px;
+        height: 320px;
+    }
+    .succes-stories h3{
+        font-size: 16pt;
+        margin-bottom: 20px;
+    }
+    .succes-stories p{
+        font-size: 12pt;
+        margin-bottom: 16px;
+    }
+
+    /* Carrusel: una sola carta */
+    .carrousel{
+        width: 100%;
+        margin-top: 60px;
+    }
+    .liste-histoire{
+        padding: 20px 6px;
+        scroll-padding-inline: 6px;
+        align-items: flex-start;
+    }
+    .carte-histoire{
+        flex: 0 0 calc((100% - 2rem) / 2);
+    }
+    .carte-histoire img{
+        height: 200px;
+    }
+
+    /* Boutons carrousel */
+    .liste-histoire::scroll-button(right),
+    .liste-histoire::scroll-button(left){
+        width: 44px;
+        height: 44px;
+        font-size: 12pt;
+        margin-inline: 0;
+        z-index: 5;
+    }
+    .liste-histoire::scroll-button(left){
+        position-area: none;
+        left: calc(anchor(left) - 9px);
+        top: anchor(center);
+        translate: 0 -50%;
+    }
+    .liste-histoire::scroll-button(right){
+        position-area: none;
+        right: calc(anchor(right) - 9px);
+        top: anchor(center);
+        translate: 0 -50%;
+    }
+
+    /* Footer dans colonne */
+    footer{
+        grid-template-columns: 1fr;
+        height: auto;
+        row-gap: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        justify-items: center;
+    }
+    .footer-img-box{
+        width: 120px;
+        height: 120px;
+    }
+    .footer-img{
+        width: 300px;
+    }
+    footer h5{
+        font-size: 15pt;
+        margin-bottom: 10px;
+    }
+    footer p{
+        line-height: 1.8;
+        max-width: 100%;
+    }
+    footer > div:last-child{
+        margin-right: 0;
+    }
+}
+@media (max-width: 600px){
+    .carte-histoire{
+        flex: 0 0 100%;
+    }
+}
+/* ---------- Hasta 480px  ---------- */
+@media (max-width: 480px){
+    header{
+        height: 70px;
+    }
+    nav ul{
+        font-size: 9pt;
+        padding: 0 8px;
+    }
+    #logo{
+        width: 150px;
+        top: -25px;
+    }
+}

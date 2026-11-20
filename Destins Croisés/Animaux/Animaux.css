@@ -1,0 +1,55 @@
+:root{
+    --couleur-secondaire:#EACDCF;
+    --couleur-primaire: #ffecdc;
+    --couleur-accent: #D9899A;
+}
+.filtres {
+    display: grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap: 0.5rem;
+
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+
+
+    background-color:var(--couleur-blanc);
+    /* border: 1px solid var(--couleur-secondaire); */
+
+    border-radius: 1rem;
+
+} 
+
+.filtre {
+    min-width: 0;
+    padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    border-radius: 1rem;
+    background-color:var(--couleur-primaire);
+    box-shadow: 0px 0px 12px 1px var(--couleur-primaire);
+}
+
+.filtre label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.filtre select {
+    appearance: none;
+    width: 100%;
+    padding: 0.3rem 0.5rem ;
+
+    background-color: var(--couleur-blanc);
+    border: 1px solid var(--couleur-secondaire);
+    border-radius: 0.5rem;
+    color: var(--couleur-texte);
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+
+    cursor: pointer;
+}

@@ -1,0 +1,138 @@
+:root{
+    --couleur2:#d2c9bd;
+    --couleur1:rgb(37, 36, 36);
+    --fontobscur: #2d2926;
+    --fontclaire: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Source Sans 3", sans-serif;
+    background-color: var(--couleur2);
+}
+/* BARRE NAV */
+/* Barre Nav */
+nav{
+    color: white;
+    width: 100%;
+    position: fixed;
+    z-index:   9999;
+    top: 0;
+    left: 0;
+    padding: 50px 60PX;
+    
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    
+}
+nav li{
+    display: flex;          
+    align-items: center;
+    
+}
+nav li:first-child{
+    margin-right: auto;
+}
+nav a,
+nav a:visited{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 100;
+}
+#logo{
+    display: block;
+    width: 170px;
+    height: auto;
+}
+#insta{
+    display: block;
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+    margin: 0 10px;
+}
+/* Bouton */
+.bouton{
+    background: transparent;
+    border: solid;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    padding: 14px 18px;
+}
+.bouton:hover{
+    color: rgba(51, 29, 0, 0.678);
+    background-color: white;
+    
+}
+nav a.active{
+    text-decoration: underline;
+    text-underline-offset: 6px;   
+    text-decoration-thickness: 1px;
+}
+/* PHOTOS SECTION */
+#content{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 720px);
+    padding: 310px 0 100px; 
+    gap: 80px;
+    justify-content: center;
+    align-items: start;
+}
+#content img{
+    display: block;
+    width: 720px;
+    height: 920px;
+    object-fit: cover;
+}
+/* Pie de page */
+footer{
+    display: grid;
+    background-color: var(--couleur1);
+    color: var(--fontclaire);
+    height: 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 90px 45px;
+    align-items: start;
+}
+footer h2{
+    margin-bottom: 20px;
+}
+footer > div:last-child{
+    margin-left: 60px;
+}
+footer p{
+    margin-bottom: 20px;
+}
+footer a,
+footer a:visited{
+    display: block;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+footer button{
+    margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

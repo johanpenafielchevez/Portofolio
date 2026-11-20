@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+/* CARTES - BENTO */
+.ensemble {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(4, 250px);
+    grid-template-areas:
+        "card1 card2 card3 card4"
+        "card1 card5 card5 card4"
+        "card6 card5 card5 card7"
+        "card8 card8 card9 card7";
+}
+
+/* Asignar cada tarjeta a su área */
+.carte:nth-child(1) { grid-area: card1; }
+.carte:nth-child(2) { grid-area: card2; }
+.carte:nth-child(3) { grid-area: card3; }
+.carte:nth-child(4) { grid-area: card4; }
+.carte:nth-child(5) { grid-area: card5; }
+.carte:nth-child(6) { grid-area: card6; }
+.carte:nth-child(7) { grid-area: card7; }
+.carte:nth-child(8) { grid-area: card8; }
+.carte:nth-child(9) { grid-area: card9; }
+
+.carte {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 1em;
+    background-color: rgba(66, 66, 247, 0.507);
+    border-radius: 10px;
+    gap: 30px;
+    text-align: center;
+    overflow: auto;
+}
+
+.carte button {
+    justify-self: center;
+}

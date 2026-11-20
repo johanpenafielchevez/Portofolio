@@ -1,0 +1,658 @@
+/* Variables */
+:root{
+    --couleur-secondaire:#EACDCF;
+    --couleur-primaire: #ffecdc;
+    --couleur-accent: #D9899A;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+}
+.ensemble{
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 34px 18px var(--couleur-secondaire);
+    position: relative;
+}
+/* Barre Navigation */
+header{
+    height: 100px;
+    background-color: var(--couleur-primaire);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 20px -6px rgba(217, 137, 154, 0.884);
+}
+nav{
+    height: 100%;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 18pt;
+}
+nav a{
+    text-decoration: none;
+}
+nav a.bouton{
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.418);
+}
+nav a.bouton-active{
+    color: black;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.418);
+    text-decoration: underline;
+    text-underline-offset: 6px;   
+    text-decoration-thickness: 1px;
+}
+#logo{
+    position: absolute;
+    top: -135px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    clip-path: circle(20% at 45% 40%);
+}
+/* Partie Description */
+.container-main{
+    background-color: var(--couleur-secondaire);
+    padding-bottom: 200px;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 140px 120px;
+}
+.information-principale{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    width: 100%;
+}
+.description{
+    flex: 1;
+    max-width: 1200px;
+    text-align: center;
+    padding: 0.2rem;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+.description h3{
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 42pt;
+    margin-bottom: 50px;
+    line-height: 1;
+    color: var(--couleur-accent);
+}
+.description p{
+
+    font-size: 14pt;
+    margin-bottom: 15px;
+}
+/* BOUTON Rejoigne */
+a.bouton-rejoigne{
+    display: inline-block;
+    padding: 16px 45px;
+    margin-top: 25px;
+    font-size: 18pt;
+    font-weight: 600;
+    min-width: 220px;
+    text-align: center;
+    border: 2px solid var(--couleur-accent);
+    border-radius: 50px;
+    color: black;
+    text-decoration: none;
+    background-color: var(--couleur-accent);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+a.bouton-rejoigne:hover{
+    background-color: transparent;
+}
+/* Photo Principal */
+.zoom-photo{
+    width: 600px;
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 40% 70% 35% 50%;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.35);
+    object-position: center 60%;
+}
+.photo-information-principale{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in;
+}
+.zoom-photo:hover .photo-information-principale{
+    transform: scale(1.1);
+}
+/* Partie Conditions */
+.Volontariat{
+    background-color: white;
+    border-top-left-radius: 50% 120px;
+    border-top-right-radius: 50% 120px;
+    border-bottom-left-radius: 50% 120px;
+    border-bottom-right-radius: 50% 120px;
+    padding: 150px 40px 150px;
+    margin-top: -140px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 1px 20px 7px rgba(217, 137, 154, 0.897);
+}
+.Volontariat h2{
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 60pt;
+    color: var(--couleur-accent);
+    margin-bottom: 100px;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 140px 120px;
+}
+.conditions{
+    background-color: var(--couleur-primaire);
+    border-radius: 30px;
+    flex: 1;
+    max-width: 650px;
+    padding: 50px;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
+.conditions h4{
+    font-size: 35pt;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.conditions li{
+    font-size: 16pt;
+    margin-bottom: 20px;
+    
+}
+.logo-volontariat{
+    width: 600px;
+    height: 600px;
+    margin-top: 100px;
+}
+/* Partie Formulaire */
+#formulaire{
+    scroll-margin-top: 140px;
+}
+.Formulaire{
+    background-color: var(--couleur-secondaire);
+    padding:320px 40px 200px ;
+    margin-top: -160px;
+}
+.Formulaire h4{
+    font-size: 60pt;
+    color: var(--couleur-accent);
+    font-family: "Playfair Display", serif ;
+    text-align: center;
+    margin-bottom: 100px;
+}
+/* Questions  */
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.forms input[type="text"],
+.forms input[type="email"],
+.forms input[type="tel"],
+.forms input[type="date"],
+.forms select {
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 3px solid var(--couleur-primaire);
+    border-radius: 12px;
+    padding: 15px 16px;
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+}
+/* Label qui flote */
+.champ{
+    position: relative;
+}
+.champ input{
+    width: 100%;
+    transition: border-color 0.4s ease;
+}
+
+/* Label = le"placeholder" qui monte */
+.champ label{
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 6px;
+    font-size: 14pt;
+    font-weight: 600;
+    color: black;
+    background-color: var(--couleur-secondaire); /* tapa el borde al subir */
+    pointer-events: none;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+/* Click et label monte */
+.champ input:focus + label,
+.champ input:not([type="date"]):not(:placeholder-shown) + label,
+.champ input[type="date"]:valid + label{
+    top: 0;
+    font-size: 11pt;
+    color: var(--couleur-accent);
+}
+/* Bordure quand tu fait click */
+.champ input:focus{
+    outline: none;
+    border-color: var(--couleur-accent);
+}
+
+.personnel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.Question{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.forms select,
+.forms .Question input{
+    width: 100%;
+}
+
+/* Checkbox disponibilites */
+.Choix{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.Choix p{
+    font-size: 16pt;
+}
+.jours{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 25px;
+}
+.jours div,
+.rgpd{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.Choix input[type="checkbox"]{
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--couleur-primaire);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.Choix input[type="checkbox"]:checked{
+    background-color: var(--couleur-primaire);
+}
+.Choix label{
+    cursor: pointer;
+    font-size: 16pt;
+}
+.rgpd{
+    margin-top: 50px;
+}
+.forms .bouton-rejoigne{
+    align-self: center;
+}
+/* Pie de page */
+footer{
+    display: grid;
+    background-color: var(--couleur-primaire);
+    height: 200px;
+    grid-template-columns: 150px 1fr auto;
+    column-gap: 40px;
+    padding: 30px 80px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -8px 20px -6px rgba(217, 137, 154, 0.849);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: start;
+    font-family: sans-serif;
+}
+.footer-img-box{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.footer-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 375px;
+    height: auto;
+    transform: translate(-45%, -40%);
+    clip-path: circle(20% at 45% 40%);
+}
+footer h5{
+    font-size: 18pt;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 30px;
+}
+footer p{
+    line-height: 2;
+    max-width: 450px;
+}
+footer > div:last-child{
+    margin-right: 150px;
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+/* ---------- 1600px: carte grande + logo plus petit ---------- */
+@media (max-width: 1600px){
+    .content{
+        width: 100%;
+        padding: 60px 0 0;
+        gap: 40px;
+    }
+    .conditions{
+        padding: 40px;
+    }
+    .conditions h4{
+        font-size: clamp(22pt, 2.4vw, 30pt);
+    }
+    .conditions li{
+        font-size: 14pt;
+        margin-bottom: 16px;
+    }
+    .logo-volontariat{
+        width: 40%;
+        height: auto;
+        margin-top: 60px;
+        align-self: flex-start;
+    }
+}
+/* ---------- 1024px  sans bordures blancs ---------- */
+@media (max-width: 1264px){
+    .ensemble{
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    header{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    nav ul{
+        font-size: 15pt;
+    }
+
+    /* Meme juste plus compact */
+    main{
+        padding: 140px 40px;
+        gap: 30px;
+    }
+    .information-principale{
+        gap: 30px;
+    }
+    .zoom-photo{
+        width: 45%;
+        flex-shrink: 0;
+        height: 420px;
+    }
+    .description h3{
+        font-size: clamp(24pt, 4.5vw, 36pt);
+        margin-bottom: 30px;
+    }
+    .description p{
+        font-size: 13pt;
+    }
+
+    /* Conditions: carte + logo plus petit */
+    .Volontariat h2{
+        font-size: clamp(30pt, 6vw, 48pt);
+        margin-bottom: 60px;
+    }
+    .content{
+        width: 100%;
+        padding: 40px 0 0;
+        gap: 30px;
+    }
+    .conditions{
+        padding: 30px;
+    }
+    .conditions h4{
+        font-size: clamp(20pt, 3vw, 28pt);
+    }
+    .conditions li{
+        font-size: 13pt;
+        margin-bottom: 14px;
+    }
+    .logo-volontariat{
+        width: 40%;
+        height: auto;
+        margin-top: 60px;
+        align-self: flex-start;
+    }
+
+    /* Formulaire */
+    .Formulaire h4{
+        font-size: clamp(30pt, 6vw, 48pt);
+        margin-bottom: 80px;
+    }
+    .champ label{
+        max-width: calc(100% - 44px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Footer */
+    footer{
+        padding: 30px 40px;
+        column-gap: 24px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    footer > div:last-child{
+        margin-right: 40px;
+    }
+}
+
+/* ----------  768px (móvil): tout colonne---------- */
+@media (max-width: 768px){
+
+    /* Header:  logo dedans la barre */
+    header{
+        height: 80px;
+    }
+    nav ul{
+        font-size: 12pt;
+        padding: 0 10px;
+    }
+    #logo{
+        width: 200px;   
+        top: -40px;     
+    }
+
+    main{
+        padding: 50px 20px 0;
+    }
+    .information-principale{
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .description{
+        flex: none;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .description h3{
+        font-size: clamp(20pt, 6vw, 30pt);
+        margin-bottom: 20px;
+    }
+    .description p{
+        font-size: 12pt;
+    }
+    a.bouton-rejoigne{
+        font-size: 14pt;
+        padding: 12px 36px;
+        min-width: 180px;
+    }
+    .zoom-photo{
+        width: 100%;
+        max-width: 420px;
+        height: 320px;
+    }
+
+    /* Conditions: logo disparait */
+    .Volontariat{
+        padding: 150px 16px 150px;
+    }
+    .Volontariat h2{
+        font-size: clamp(24pt, 8vw, 36pt);
+        margin-bottom: 30px;
+    }
+    .content{
+        padding: 0;
+    }
+    .logo-volontariat{
+        display: none;
+    }
+    .conditions{
+        max-width: 100%;
+        padding: 24px 20px;
+    }
+    .conditions h4{
+        font-size: 16pt;
+    }
+    .conditions ul{
+        padding-left: 16px;
+    }
+    .conditions li{
+        font-size: 12pt;
+        margin-bottom: 12px;
+    }
+
+    /* Formulaire */
+    #formulaire{
+        scroll-margin-top: 100px;
+    }
+    .Formulaire{
+       padding: 260px 16px 100px;
+    }
+    .Formulaire h4{
+        font-size: clamp(24pt, 8vw, 36pt);
+        margin-bottom: 40px;
+    }
+    .forms,
+    .personnel,
+    .Question{
+        gap: 16px;
+    }
+    .forms .champ input{
+        font-size: 12pt;
+        padding: 13px 14px;
+    }
+    .champ label{
+        left: 14px;
+        font-size: 11pt;
+    }
+    .champ input:focus + label,
+    .champ input:not([type="date"]):not(:placeholder-shown) + label,
+    .champ input[type="date"]:valid + label{
+        font-size: 9pt;
+    }
+    .Choix p,
+    .Choix label{
+        font-size: 12pt;
+    }
+    .Choix input[type="checkbox"]{
+        flex-shrink: 0;
+    }
+    .rgpd{
+        margin-top: 30px;
+    }
+
+    /* Footer en colonne */
+    footer{
+        grid-template-columns: 1fr;
+        height: auto;
+        row-gap: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        justify-items: center;
+    }
+    .footer-img-box{
+        width: 120px;
+        height: 120px;
+    }
+    .footer-img{
+        width: 300px;
+    }
+    footer h5{
+        font-size: 15pt;
+        margin-bottom: 10px;
+    }
+    footer p{
+        line-height: 1.8;
+        max-width: 100%;
+    }
+    footer > div:last-child{
+        margin-right: 0;
+    }
+}
+
+/* ----------  600px: formulaire dans colonne ---------- */
+@media (max-width: 600px){
+    .personnel{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- 480px  ---------- */
+@media (max-width: 480px){
+    header{
+        height: 70px;
+    }
+    nav ul{
+        font-size: 9pt;
+        padding: 0 8px;
+    }
+    #logo{
+        width: 150px;
+        top: -25px;
+    }
+}
+

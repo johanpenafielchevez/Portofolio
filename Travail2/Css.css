@@ -1,0 +1,155 @@
+:root{
+    --fond-color:linear-gradient(322deg,rgba(255, 195, 0, 1) 0%, rgba(247, 0, 0, 1) 48%, rgba(187, 0, 255, 1) 95%);
+}
+*{
+    margin:0 ;
+    align-items: center;
+}
+/* FOND D'ECRAN */
+body{
+    background: #ffc300;
+   background: var(--fond-color);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* CARTE ET OMBRE DE CARTE*/
+.carte{
+    width: 400px;
+    height: 500px;
+    background-color:rgba(255, 255, 255, 0.288);
+    margin: 0 auto; 
+    margin-top: 100px;
+    border-radius: 20px;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    -webkit-box-shadow: -1px 0px 23px 9px rgba(255, 255, 255, 0.73); 
+    box-shadow: -1px 0px 23px 9px rgba(255, 255, 255, 0.925);
+    outline: 1px solid transparent;
+    transition: outline 1s ease 0s;
+}
+/* Transition Souris dedans carte */
+.carte:hover{
+    background-color: rgba(255, 255, 255, 0);
+    outline: 15px solid #fffffb33;
+}
+/* Titre */
+h1{
+    color: white;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left:  auto;
+    margin-right:  auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* UNDERLINE Titre*/
+h1::after{
+    content: '';
+    display: block;
+    margin: 6px auto 0;
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: wheat;
+}
+/* INPUTS */
+input[type="email"], [type="password"],[type="text"] {
+    height: 24px;
+    border-radius: 10px;
+    border:  2px solid;
+    transition: border-color 0.4s ease;
+}
+/* ELIMINATION PLACEHOLDER */
+input:focus::placeholder {
+    color: transparent;
+}
+/* INPUT ACCEPTE */
+input:valid{
+    border-color: green;
+}
+/* INPUT PAS ACCEPTE */
+input:invalid{
+    border-color: red;
+}
+/* CLICK/"TRANSLATE" LABEL*/
+label{
+    color: transparent;
+    display: block;
+    width: fit-content;
+    left: 20px;
+    margin-left: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.4s ease-in, translate 0.4s ease-in; 
+}
+/* L'ensemble n'a pas marché mais un par un oui */
+/* #user, #mail, #pass:hover> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+ /* ANIMATION LABL */
+#pass:hover> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ #mail:hover> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#user:hover> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* AVEC "HOVER" FONCTIONNE MAIS PAS AVEC FOCUS */
+#pass:focus> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ #mail:focus> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#user:focus> label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* SEPARATION INPUT */
+#user, #mail, #pass{
+    margin-top: 25px;
+}
+/* Bouton et transition Couleur */
+button{ 
+    width: 150px;
+    position: relative;
+    height: 70px;
+    border-style: none;
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: linear-gradient(339deg,rgb(161, 221, 252) 0%, rgba(0, 170, 255, 1) 48%, rgb(183, 244, 255) 95%) ;
+    margin-top: 50px;  
+    border-radius: 30px;
+    z-index: 0;
+    cursor: pointer;
+}
+button::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    transition: background-size 1s ease-in;
+    background: linear-gradient(339deg,rgba(255, 255, 255, 1) 0%, rgba(255, 102, 0, 1) 48%, rgba(255, 255, 255, 1) 95%);
+    z-index: -1;
+    background-size: 0% 100%; 
+    background-repeat: no-repeat;
+    background-position: left;
+}
+button:hover::after{
+    background-size: 100% 100%;
+}
+
+

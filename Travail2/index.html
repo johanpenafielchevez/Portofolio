@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travail 2</title>
+    <link rel="stylesheet" href="Css.css">
+</head>
+<body>
+    <!-- GENERAL -->
+    <div class="carte">
+        <!-- Titre -->
+        <div class="log">
+         <h1>Log In</h1>
+        </div>
+        <!-- User -->
+        <div id="user">
+            <label for="text">UserName</label>
+            <input type="text" placeholder="UserName">
+        </div>
+        <!-- Mail -->
+        <div id="mail">
+            <label for="email">Mail</label>
+            <input type="email" placeholder="Mail">
+        </div>
+        <!-- Mot de passe -->
+        <div id="pass">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" required minlength="5" maxlength="5"  pattern="[A-Za-z0-9!-\/:-@\[-`{-~]{5}">
+        </div>
+        <!-- Bouton Envoyer -->
+        <div class="ok">
+            <button type="submit">Envoyer</button>
+        </div>
+    </div>
+</body>
+</html>
